@@ -16,12 +16,17 @@
 
   "icons": [
     {
-      "src": "/Last-Road-main/icons/iconsicon-192.png.jpg",
+      "src": "/Last-Road-main/icons/icon-192.png",
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/png"
     },
     {
-      "src": "/Last-Road-main/icons/icons/icon-512-maskable.png",
+      "src": "/Last-Road-main/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/Last-Road-main/icons/icon-512-maskable.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
