@@ -56,7 +56,7 @@
       "src": "/Last-Road-main/screenshots/cap4.png",
       "sizes": "1280x720",
       "type": "image/png",
-      "label": "Fondo del juego"
+      "label": "Pantalla de juego"
     },
     {
       "src": "/Last-Road-main/screenshots/cap5.jpg",
@@ -129,5 +129,9 @@
     {
       "origin": "https://alx17xd.github.io"
     }
-  ]
+  ],
+
+  "widgets": [],
+  "note_taking": {},
+  "protocol_handlers": []
 }
