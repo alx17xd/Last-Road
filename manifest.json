@@ -1,0 +1,129 @@
+{
+  "name": "Last Road",
+  "short_name": "LastRoad",
+  "description": "Juego de conducción desafiante donde recorres el último camino enfrentando obstáculos, curvas imposibles y una carrera contra el tiempo. ¡Domina la carretera final!",
+  "lang": "es",
+  "dir": "ltr",
+  "id": "com.alx17xd.lastroad",
+  "start_url": "/Last-Road/index.html",
+  "scope": "/Last-Road/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "tabs", "minimal-ui"],
+  "background_color": "#000000",
+  "theme_color": "#1a1a1a",
+  "orientation": "landscape",
+  "categories": ["games", "racing", "arcade", "entertainment"],
+
+  "icons": [
+    
+    {
+      "src": "Last-Road-main/icons/iconsicon-192.png.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "Last-Road-main/icons/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+
+  "screenshots": [
+    {
+      "src": "Last-Road-main/screenshots/cap5.jpg",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Jugando en la carretera"
+    },
+    {
+      "src": "Last-Road-main/screenshots/cap2.jpg",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Fin del juego / Game Over"
+    },
+    {
+      "src": "Last-Road-main/screenshots/cap3.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Tabla de puntuaciones"
+    },
+    {
+      "src": "Last-Road-main/screenshots/cap4.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Mapa de niveles"
+    },
+    {
+      "src": "Last-Road-main/screenshots/cap1.jpg",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Logo del juego"
+    }
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Jugar ahora",
+      "short_name": "Jugar",
+      "description": "Ir directamente al modo de juego principal",
+      "url": "/Last-Road/game.html",
+      "icons": [{ "src": "/Last-Road/icons/play.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Tabla de puntuaciones",
+      "short_name": "Puntuaciones",
+      "description": "Consulta los mejores puntajes del juego",
+      "url": "/Last-Road/scores.html",
+      "icons": [{ "src": "/Last-Road/icons/trophy.png", "sizes": "96x96" }]
+    }
+  ],
+
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.alx17xd.lastroad"
+    },
+    {
+      "platform": "windows",
+      "url": "https://apps.microsoft.com/detail/last-road"
+    }
+  ],
+  "prefer_related_applications": false,
+  "iarc_rating_id": "YOUR-IARC-RATING-ID",
+
+  "file_handlers": [
+    {
+      "action": "/open-file",
+      "accept": {
+        "application/json": [".json"],
+        "text/plain": [".txt"]
+      }
+    }
+  ],
+
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+  },
+
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+
+  "scope_extensions": [
+    {
+      "origin": "https://alx17xd.github.io"
+    }
+  ]
+}
