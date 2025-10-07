@@ -34,44 +34,39 @@
       "purpose": "maskable"
     }
   ],
+"screenshots": [
+  {
+    "src": "/Last-Road-main/screenshots/cap1.jpg",
+    "sizes": "1280x720",
+    "type": "image/jpeg",
+    "label": "Jugando en la carretera"
+  },
+  {
+    "src": "/Last-Road-main/screenshots/cap2.jpg",
+    "sizes": "1280x720",
+    "type": "image/jpeg",
+    "label": "Fin del juego / Game Over"
+  },
+  {
+    "src": "/Last-Road-main/screenshots/cap3.png",
+    "sizes": "1280x720",
+    "type": "image/png",
+    "label": "Tabla de puntuaciones"
+  },
+  {
+    "src": "/Last-Road-main/screenshots/cap4.png",
+    "sizes": "1280x720",
+    "type": "image/png",
+    "label": "Pantalla de juego"
+  },
+  {
+    "src": "/Last-Road-main/screenshots/cap5.jpg",
+    "sizes": "1280x720",
+    "type": "image/jpeg",
+    "label": "Logo del juego"
+  }
+],
 
-  "screenshots": [
-    {
-      "src": "/Last-Road-main/screenshots/cap1.jpg",
-      "sizes": "1280x720",
-      "type": "image/jpeg",
-      "label": "Jugando en la carretera",
-      "platform": "wide"
-    },
-    {
-      "src": "/Last-Road-main/screenshots/cap2.jpg",
-      "sizes": "1280x720",
-      "type": "image/jpeg",
-      "label": "Fin del juego / Game Over",
-      "platform": "wide"
-    },
-    {
-      "src": "/Last-Road-main/screenshots/cap3.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "label": "Tabla de puntuaciones",
-      "platform": "wide"
-    },
-    {
-      "src": "/Last-Road-main/screenshots/cap4.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "label": "Pantalla de juego",
-      "platform": "wide"
-    },
-    {
-      "src": "/Last-Road-main/screenshots/cap5.jpg",
-      "sizes": "1280x720",
-      "type": "image/jpeg",
-      "label": "Logo del juego",
-      "platform": "wide"
-    }
-  ],
 
   "shortcuts": [
     {
@@ -140,3 +135,4 @@
   "note_taking": {},
   "protocol_handlers": []
 }
+
