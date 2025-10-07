@@ -1,66 +1,73 @@
-const CACHE_NAME = "lastroad-v1";
-
-// Archivos que se cachearán
-const FILES_TO_CACHE = [
-  "/Last-Road-main/index.html",
-  "/Last-Road-main/scores.html",
-  "/Last-Road-main/manifest.json",
-  "/Last-Road-main/icons/iconsicon-192.png.jpg",
-  "/Last-Road-main/icons/icons/icon-512-maskable.png",
-  "/Last-Road-main/icons/play.png",
-  "/Last-Road-main/icons/trophy.png",
-  "/Last-Road-main/screenshots/cap1.jpg",
-  "/Last-Road-main/screenshots/cap2.jpg",
-  "/Last-Road-main/screenshots/cap3.png",
-  "/Last-Road-main/screenshots/cap4.png",
-  "/Last-Road-main/screenshots/cap5.jpg"
+const CACHE_NAME = 'last-road-cache-v1';
+const urlsToCache = [
+  '/Last-Road-main/index.html',
+  '/Last-Road-main/game.html',
+  '/Last-Road-main/scores.html',
+  '/Last-Road-main/icons/icon-192.png',
+  '/Last-Road-main/icons/icon-512.png',
+  '/Last-Road-main/icons/icon-512-maskable.png',
+  '/Last-Road-main/icons/play.png',
+  '/Last-Road-main/icons/trophy.png',
+  '/Last-Road-main/screenshots/cap1.jpg',
+  '/Last-Road-main/screenshots/cap2.jpg',
+  '/Last-Road-main/screenshots/cap3.png',
+  '/Last-Road-main/screenshots/cap4.png',
+  '/Last-Road-main/screenshots/cap5.jpg',
+  '/Last-Road-main/style.css', // si tienes CSS
+  '/Last-Road-main/app.js'     // si tienes JS
 ];
 
-// Instalación del service worker y cache inicial
-self.addEventListener("install", (event) => {
+// Instalación del service worker y cacheo de archivos
+self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(FILES_TO_CACHE))
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(urlsToCache);
+    })
   );
-  self.skipWaiting();
 });
 
-// Activación del service worker y limpieza de caches antiguas
-self.addEventListener("activate", (event) => {
+// Activación y limpieza de cachés antiguas
+self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(keys.map((key) => key !== CACHE_NAME && caches.delete(key)))
-    )
+    caches.keys().then((keys) => {
+      return Promise.all(
+        keys.filter((key) => key !== CACHE_NAME)
+            .map((key) => caches.delete(key))
+      );
+    })
   );
-  self.clients.claim();
 });
 
-// Estrategia de fetch: cache primero, luego red, fallback offline
-self.addEventListener("fetch", (event) => {
+// Intercepción de solicitudes y respuesta desde caché
+self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request)
-      .then((cached) => cached || fetch(event.request).catch(() => caches.match("/Last-Road-main/index.html")))
+      .then((response) => {
+        return response || fetch(event.request);
+      })
   );
 });
 
-// Sincronización en segundo plano (ejemplo: enviar puntuaciones)
-self.addEventListener("sync", (event) => {
-  if (event.tag === "sync-scores") {
-    event.waitUntil(syncScores());
+// Opción: sincronización en segundo plano y notificaciones push
+self.addEventListener('sync', (event) => {
+  if (event.tag === 'sync-data') {
+    event.waitUntil(syncData());
   }
 });
 
-async function syncScores() {
-  // Aquí puedes implementar envío de puntuaciones al servidor
-  console.log("Sincronizando puntuaciones en segundo plano...");
-}
-
-// Notificaciones push
-self.addEventListener("push", (event) => {
-  const data = event.data?.json() || {};
-  const title = data.title || "Last Road";
+self.addEventListener('push', (event) => {
+  const data = event.data ? event.data.text() : '¡Last Road te recuerda jugar!';
   const options = {
-    body: data.body || "¡Nuevo contenido disponible!",
-    icon: "/Last-Road-main/icons/iconsicon-192.png.jpg"
+    body: data,
+    icon: '/Last-Road-main/icons/icon-192.png'
   };
-  event.waitUntil(self.registration.showNotification(title, options));
+  event.waitUntil(
+    self.registration.showNotification('Last Road', options)
+  );
 });
+
+// Función ejemplo para sincronización
+async function syncData() {
+  // Aquí puedes refrescar datos remotos si los necesitas
+  console.log('Sincronización en segundo plano realizada.');
+}
