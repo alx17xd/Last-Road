@@ -9,11 +9,11 @@
   "scope": "/Last-Road-main/",
   "display": "standalone",
   "display_override": ["window-controls-overlay", "tabs", "minimal-ui"],
+  "orientation": "landscape",
   "background_color": "#000000",
   "theme_color": "#1a1a1a",
-  "orientation": "landscape",
   "categories": ["games", "racing", "arcade", "entertainment"],
-  
+
   "icons": [
     {
       "src": "/Last-Road-main/icons/icon-192.png",
@@ -34,39 +34,39 @@
       "purpose": "maskable"
     }
   ],
-"screenshots": [
-  {
-    "src": "/Last-Road-main/screenshots/cap1.jpg",
-    "sizes": "1280x720",
-    "type": "image/jpeg",
-    "label": "Jugando en la carretera"
-  },
-  {
-    "src": "/Last-Road-main/screenshots/cap2.jpg",
-    "sizes": "1280x720",
-    "type": "image/jpeg",
-    "label": "Fin del juego / Game Over"
-  },
-  {
-    "src": "/Last-Road-main/screenshots/cap3.png",
-    "sizes": "1280x720",
-    "type": "image/png",
-    "label": "Tabla de puntuaciones"
-  },
-  {
-    "src": "/Last-Road-main/screenshots/cap4.png",
-    "sizes": "1280x720",
-    "type": "image/png",
-    "label": "Pantalla de juego"
-  },
-  {
-    "src": "/Last-Road-main/screenshots/cap5.jpg",
-    "sizes": "1280x720",
-    "type": "image/jpeg",
-    "label": "Logo del juego"
-  }
-],
 
+  "screenshots": [
+    {
+      "src": "/Last-Road-main/screenshots/cap1.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "label": "Jugando en la carretera"
+    },
+    {
+      "src": "/Last-Road-main/screenshots/cap2.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "label": "Fin del juego / Game Over"
+    },
+    {
+      "src": "/Last-Road-main/screenshots/cap3.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Tabla de puntuaciones"
+    },
+    {
+      "src": "/Last-Road-main/screenshots/cap4.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Pantalla de juego"
+    },
+    {
+      "src": "/Last-Road-main/screenshots/cap5.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "label": "Logo del juego"
+    }
+  ],
 
   "shortcuts": [
     {
@@ -74,14 +74,14 @@
       "short_name": "Jugar",
       "description": "Ir directamente al modo de juego principal",
       "url": "/Last-Road-main/index.html",
-      "icons": [{ "src": "/Last-Road-main/icons/play.png", "sizes": "96x96" }]
+      "icons": [{ "src": "/Last-Road-main/icons/play.png", "sizes": "96x96", "type": "image/png" }]
     },
     {
       "name": "Tabla de puntuaciones",
       "short_name": "Puntuaciones",
       "description": "Consulta los mejores puntajes del juego",
       "url": "/Last-Road-main/scores.html",
-      "icons": [{ "src": "/Last-Road-main/icons/trophy.png", "sizes": "96x96" }]
+      "icons": [{ "src": "/Last-Road-main/icons/trophy.png", "sizes": "96x96", "type": "image/png" }]
     }
   ],
 
@@ -107,7 +107,7 @@
     }
   ],
   "prefer_related_applications": false,
-  "iarc_rating_id": "UNKNOWN",
+  "iarc_rating_id": "UNRATED",
 
   "file_handlers": [
     {
@@ -133,6 +133,6 @@
 
   "widgets": [],
   "note_taking": {},
-  "protocol_handlers": []
+  "protocol_handlers": [],
+  "handle_links": "preferred"
 }
-
